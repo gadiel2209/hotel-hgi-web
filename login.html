@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Iniciar sesión · HGI Operaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="login">
+    <aside class="login-marca">
+      <div class="marca-contenido">
+        <span class="marca-sello">HGI · MTY</span>
+        <h1>Operaciones del hotel en tiempo real</h1>
+        <p>Estado de las 134 habitaciones, limpieza, mantenimiento, llegadas y predicciones de IA en un solo lugar.</p>
+        <ul class="marca-puntos">
+          <li><span class="punto" style="background: var(--c-lista)"></span>Habitaciones listas al instante</li>
+          <li><span class="punto" style="background: var(--c-sucia)"></span>Incidencias con prioridad y seguimiento</li>
+          <li><span class="punto" style="background: var(--c-ocupada)"></span>Mantenimiento predictivo con sensores ESP32</li>
+        </ul>
+      </div>
+      <p class="marca-pie">Caso de estudio · Hilton Garden Inn Monterrey Aeropuerto</p>
+    </aside>
+
+    <main class="login-panel">
+      <form id="form-login" class="login-form" method="post" action="/login" novalidate>
+        <h2>Iniciar sesión</h2>
+        <p class="sub">Usa tu usuario del sistema del hotel.</p>
+
+        <!-- Aquí aparece la advertencia cuando el acceso falla -->
+        <div id="alerta" class="alerta" role="alert" aria-live="assertive" hidden>
+          <span class="alerta-icono" aria-hidden="true">⚠</span>
+          <div>
+            <strong id="alerta-titulo">No se pudo iniciar sesión</strong>
+            <p id="alerta-mensaje"></p>
+          </div>
+        </div>
+
+        <label class="campo">
+          <span>Usuario</span>
+          <input id="usuario" name="usuario" type="text" autocomplete="username" autocapitalize="none"
+                 spellcheck="false" placeholder="ej. atorres" maxlength="30" autofocus />
+        </label>
+
+        <label class="campo">
+          <span>Contraseña</span>
+          <div class="campo-password">
+            <input id="password" name="password" type="password" autocomplete="current-password"
+                   placeholder="••••••••" maxlength="72" />
+            <button type="button" id="btn-ojo" class="btn-ojo" aria-label="Mostrar contraseña">Mostrar</button>
+          </div>
+        </label>
+
+        <button id="btn-entrar" class="btn-primario" type="submit">Entrar</button>
+
+        <p class="nota-seguridad">
+          Tras varios intentos fallidos la cuenta se bloquea temporalmente. Cada intento queda registrado en la bitácora de auditoría.
+        </p>
+
+        <details id="config-servidor" class="config-servidor">
+          <summary>Conexión con servidor API (GitHub Pages)</summary>
+          <div class="config-servidor-cuerpo">
+            <p>Si abres esta página desde GitHub Pages, pega aquí la URL de tu servidor Node.js (ej. Render):</p>
+            <div class="config-servidor-fila">
+              <input id="input-api-url" type="url" placeholder="https://tu-app.onrender.com" />
+              <button type="button" id="btn-guardar-api" class="btn-secundario">Guardar</button>
+            </div>
+            <small id="estado-api-url" class="muted"></small>
+          </div>
+        </details>
+      </form>
+    </main>
+  </div>
+  <script src="js/login.js" type="module"></script>
+</body>
+</html>

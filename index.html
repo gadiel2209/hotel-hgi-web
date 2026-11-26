@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Ventana principal · HGI Operaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="barra">
+      <div class="barra-marca">
+        <span class="marca-sello chico">HGI · MTY</span>
+        <div>
+          <strong>Operaciones del hotel</strong>
+          <small>Monterrey Aeropuerto · 134 habitaciones</small>
+        </div>
+      </div>
+      <div class="barra-usuario">
+        <div id="avatar" class="avatar" aria-hidden="true"></div>
+        <div class="usuario-datos">
+          <strong id="usuario-nombre">…</strong>
+          <small><span id="usuario-puesto"></span> · <span id="usuario-rol" class="rol"></span></small>
+        </div>
+        <button id="btn-salir" class="btn-secundario">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="contenido">
+      <section class="bienvenida">
+        <div>
+          <h1 id="saludo">Hola</h1>
+          <p id="detalle-usuario"></p>
+        </div>
+        <div class="acciones">
+          <small id="actualizado" class="muted"></small>
+          <button id="btn-actualizar" class="btn-secundario">↻ Actualizar</button>
+        </div>
+      </section>
+
+      <div id="error" class="alerta alerta-error" role="alert" hidden>
+        <span class="alerta-icono">⚠</span>
+        <div><strong>No se pudieron cargar los datos</strong><p id="error-mensaje"></p></div>
+      </div>
+
+      <div id="cargando" class="pantalla-carga dentro">
+        <div class="spinner"></div>
+        <p>Consultando hotel_hgi en MongoDB Atlas…</p>
+      </div>
+
+      <section id="sec-habitaciones" class="seccion" hidden></section>
+      <div id="rejilla" class="rejilla" hidden>
+        <section id="sec-incidencias" class="panel"></section>
+        <section id="sec-llegadas" class="panel"></section>
+        <section id="sec-notificaciones" class="panel"></section>
+        <section id="sec-predicciones" class="panel panel-ancho"></section>
+      </div>
+    </main>
+  </div>
+  <script src="js/panel.js" type="module"></script>
+</body>
+</html>

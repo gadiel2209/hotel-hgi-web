@@ -1,0 +1,20 @@
+{
+  "name": "hotel-hgi-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de operaciones del hotel (caso Hilton Garden Inn Monterrey Aeropuerto) en HTML, CSS y JS puro con API Node.js y MongoDB Atlas",
+  "type": "module",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check-db": "node scripts/check-connection.js",
+    "set-password": "node scripts/set-password.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "mongodb": "^6.10.0"
+  }
+}
